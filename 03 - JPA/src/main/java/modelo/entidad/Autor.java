@@ -1,4 +1,4 @@
-package modelo.entidad;
+package modelo.entidad;//AÑADIENDO
 
 import java.util.Date;
 
