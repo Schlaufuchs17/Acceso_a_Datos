@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package modelo.entidad;// CAMBIADO
+=======
+package modelo.entidad;//AÑADIENDO
+>>>>>>> adc8b634888f8a4c5d203bea756191a0a4d2b3bf
 
 import java.util.Date;
 
