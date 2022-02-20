@@ -1,4 +1,4 @@
-package modelo.entidad;
+package modelo.entidad;// CAMBIADO
 
 import java.util.Date;
 
