@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="libreria")
+@Table(name="librerias")
 public class Libreria {
 	
 	@Id
@@ -22,23 +22,26 @@ public class Libreria {
 	private String nombre ;
 	private String direccion;
 	
-	
+	@Override
+	public String toString() {
+		return "Libreria [id_libreria=" + id_libreria + ", nombre=" + nombre + ", direccion=" + direccion + ", dueño="
+				+ dueño + ", coleccionLibros=" + coleccionLibros + "]";
+	}
 
 	private String dueño;
 	@ManyToMany(cascade = CascadeType.PERSIST)
-	private List<Libro> coleccion;
+	private List<Libro> coleccionLibros;
 	
 	public Libreria () {
 		super();
-		coleccion = new ArrayList<Libro>();
+		coleccionLibros = new ArrayList<Libro>();
 	}
-	// segundo constructor con todo el super siempre en el primero y al principio q sino no funciona
 	public Libreria(String nombre, String nombreDueño, String direccion) {
 		super();
 		this.nombre = nombre;
 		this.dueño = nombreDueño;
 		this.direccion = direccion;
-		coleccion = new ArrayList<Libro>();
+		coleccionLibros = new ArrayList<Libro>();
 	}
 	public int getId() {
 		return id_libreria;
@@ -65,22 +68,18 @@ public class Libreria {
 		this.direccion = direccion;
 	}
 	public List<Libro> getColeccionLibros() {
-		return coleccion;
+		return coleccionLibros;
 	}
 	public void setColeccionLibros(List<Libro> libros1) {
-		this.coleccion = libros1;
+		this.coleccionLibros = libros1;
 	}
 	
 	public void añadirLibro(Libro l) {
-		coleccion.add(l);
+		coleccionLibros.add(l);
 	}
 	
 	
-	@Override
-	public String toString() {
-		return "Libreria [id_libreria=" + id_libreria + ", nombre=" + nombre + ", direccion=" + direccion + ", dueño="
-				+ dueño + ", coleccion=" + coleccion + "]";
-	}
+	
 	
 
 }

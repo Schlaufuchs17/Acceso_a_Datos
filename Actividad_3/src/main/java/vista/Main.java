@@ -70,10 +70,8 @@ public class Main {
 	private static void autores(List<Autor> autores) {
 		for(Autor autor : autores) {
 			System.out.println("Autor: " + autor.getNombre() + " " + autor.getApellidos());
-			System.out.println("LIBROS DEL : " + autor.getNombre());
 			for (Libro libro : autor.getLibros())
-				
-				System.out.println("Libro: " + libro.getTitulo());
+				System.out.println("Libro: " +libro.getTitulo());
 		}
 		
 		
@@ -97,18 +95,17 @@ public class Main {
 
 	private static void mostrarLibros(List<Libro> libros) {
 		for(Libro libro : libros)
-			System.out.println("Titulo: " + libro.getTitulo() +" - " + libro.getEditorial().getNombre() + ", precio: " +libro.getPrecio() + 
-					", autor: " +libro.getAutor().getNombre() + " " + libro.getAutor().getApellidos() + ", editorial: " );
+			System.out.println("Titulo: " + libro.getTitulo() + ", precio: " +libro.getPrecio() + 
+					", autor: " +libro.getAutor().getNombre() + " " + libro.getAutor().getApellidos() + ", editorial: " +libro.getEditorial().getNombre());
 		
 	}
 	
 	
 	private static void mostrarLibrosYLibreria(List<Libro> librosEnLibreria) {
 		for (Libro libro : librosEnLibreria) {
-			System.out.println( libro.getTitulo());
-			System.out.println(" esta disponible en las siguientes librerias ");
+			System.out.println("Libro: " + libro.getTitulo());
 			for (Libreria libreria : libro.getLibrerias())
-				System.out.println(libreria.getNombre());
+				System.out.println("Libreria: " +libreria.getNombre());
 		}
 		
 	}

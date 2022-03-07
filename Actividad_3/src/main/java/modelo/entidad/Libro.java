@@ -55,8 +55,6 @@ public class Libro {
 		this.autor = autor;
 		this.librerias = new ArrayList<Libreria>();
 	}
-	
-	// segundo  constructor
 	public Libro(String titulo, double precio) {
 		this.titulo = titulo;
 		this.precio = precio;

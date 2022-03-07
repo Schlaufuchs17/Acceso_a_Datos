@@ -54,7 +54,7 @@ public class LibroDao {
 		if(!abrirConexion()) {
 			return null;
 		}		
-		//ESTO ES PARA REALIZAR LA CONSULTA
+		//para hacer la consulta debemos de usar JPQL
 		Query query = en.createQuery("select libro from Libro libro");
 		List<Libro> libros = query.getResultList();
 		return libros;
